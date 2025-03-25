@@ -1,0 +1,13 @@
+<view class="container">
+    <view class="welcome-header">
+      <image class="user-avatar" src="{{userInfo.avatarUrl}}"></image>
+      <text class="welcome-text">Hello, {{userInfo.nickName}}!</text>
+      <text class="language-text">{{welcomeMessage}}</text>
+    </view>
+    
+    <view class="content-placeholder">
+      <text>Your learning content will appear here.</text>
+      <text>We're preparing personalized {{learningLanguage === 'chinese' ? 'Chinese' : 'English'}} lessons for you.</text>
+    </view>
+  </view>
+  

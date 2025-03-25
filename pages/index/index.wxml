@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{appTitle}}</text>
+    <text class="subtitle">{{appSubtitle}}</text>
+  </view>
+
+  <view class="signup-form">
+    <view class="form-item avatar-container">
+      <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      </button>
+      <text class="label">Profile Photo</text>
+    </view>
+
+    <view class="form-item">
+      <text class="label">Your Name</text>
+      <input type="nickname" class="input" placeholder="Enter your name" bindinput="onInputChange" value="{{userInfo.nickName}}" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">I want to learn</text>
+      <radio-group class="language-selector" bindchange="onLanguageChange">
+        <label class="language-option" wx:for="{{languages}}" wx:key="id">
+          <view class="language-card {{selectedLanguage === item.id ? 'selected' : ''}}">
+            <radio value="{{item.id}}" checked="{{selectedLanguage === item.id}}" />
+            <text>{{item.name}}</text>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+
+    <button class="signup-button {{hasUserInfo ? '' : 'disabled'}}" bindtap="signUp">
+      Sign Up with WeChat
+    </button>
+  </view>
+
+  <view class="footer">
+    <text>Start your language journey today!</text>
+  </view>
+</view>
